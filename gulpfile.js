@@ -26,7 +26,10 @@ gulp.task('html',function(){
         .pipe(rigger())
         .pipe(gulp.dest(config.paths.build))
 });
-
+gulp.task('img',function(){
+    return gulp.src(config.paths.img)
+        .pipe(gulp.dest(config.paths.build + '/img'))
+});
 gulp.task('server', function(){
     connect.server({root: config.paths.build, port: config.port});
 });
@@ -39,6 +42,7 @@ gulp.task('watch', function(){
     gulp.watch(config.paths.less, ['css']);
     gulp.watch(config.paths.html, ['html']);
     gulp.watch(config.paths.js, ['js']);
+    gulp.watch(config.paths.img, ['img']);
 });
 
-gulp.task('default', ['css', 'js', 'html', 'serve', 'watch']);
+gulp.task('default', ['img','css', 'js', 'html', 'serve', 'watch']);

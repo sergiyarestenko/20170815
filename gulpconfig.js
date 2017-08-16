@@ -11,7 +11,8 @@ module.exports = {
         html: "./src/*.html",
         stylesheets: "./src/main.less",
         less:"./src/main.less",
-        js: './src/app.js'
+        js: './src/app.js',
+        img: './src/img/**/*.*'
     },
     browserSync: {
         proxy: `http://localhost:8000/index.html`,
